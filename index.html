@@ -1,264 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hayk Sahakyan</title>
 
     <style>
-        ::-moz-selection {
-            color: #fff;
-            background: #2e6f95;
+      ::-moz-selection {
+        color: #fff;
+        background: #2e6f95;
+      }
+
+      ::selection {
+        color: #fff;
+        background: #2e6f95;
+      }
+
+      body {
+        overflow-x: hidden;
+        overflow: hidden;
+        margin: 0;
+      }
+
+      .d-none {
+        display: none;
+        opacity: 0;
+      }
+
+      .d-block {
+        display: block;
+        opacity: 1;
+      }
+
+      .d-grid {
+        display: grid;
+        opacity: 1;
+      }
+
+      main,
+      canvas,
+      loader {
+        transition: opacity 0.7s ease-in;
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotate(0);
         }
 
-        ::selection {
-            color: #fff;
-            background: #2e6f95;
+        to {
+          transform: rotate(359deg);
         }
+      }
 
-        body {
-            overflow-x: hidden;
-            overflow: hidden;
-            margin: 0;
-        }
+      .solar-system {
+        width: 250px;
+        height: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
 
-        .d-none {
-            display: none;
-            opacity: 0;
-        }
+      .orbit {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #fafbfc;
+        border-radius: 50%;
+      }
 
-        .d-block {
-            display: block;
-            opacity: 1;
-        }
+      .earth-orbit {
+        width: 165px;
+        height: 165px;
+        -webkit-animation: spin 12s linear 0s infinite;
+        animation: spin 12s linear 0s infinite;
+      }
 
-        .d-grid {
-            display: grid;
-            opacity: 1;
-        }
+      .venus-orbit {
+        width: 120px;
+        height: 120px;
+        -webkit-animation: spin 7.4s linear 0s infinite;
+        animation: spin 7.4s linear 0s infinite;
+      }
 
-        main,
-        canvas,
-        loader {
-            transition: opacity 0.7s ease-in;
-        }
+      .mercury-orbit {
+        width: 90px;
+        height: 90px;
+        -webkit-animation: spin 3s linear 0s infinite;
+        animation: spin 3s linear 0s infinite;
+      }
 
-        @keyframes spin {
-            from {
-                transform: rotate(0);
-            }
+      .planet {
+        position: absolute;
+        top: -5px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #3ff9dc;
+      }
 
-            to {
-                transform: rotate(359deg);
-            }
-        }
+      .sun {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background-color: #ffab91;
+      }
 
+      canvas,
+      main {
+        opacity: 0;
+        display: none;
+        overflow: hidden;
+      }
 
-        .solar-system {
-            width: 250px;
-            height: 250px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .orbit {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: 1px solid #fafbfC;
-            border-radius: 50%;
-        }
-
-        .earth-orbit {
-            width: 165px;
-            height: 165px;
-            -webkit-animation: spin 12s linear 0s infinite;
-            animation: spin 12s linear 0s infinite;
-        }
-
-        .venus-orbit {
-            width: 120px;
-            height: 120px;
-            -webkit-animation: spin 7.4s linear 0s infinite;
-            animation: spin 7.4s linear 0s infinite;
-        }
-
-        .mercury-orbit {
-            width: 90px;
-            height: 90px;
-            -webkit-animation: spin 3s linear 0s infinite;
-            animation: spin 3s linear 0s infinite;
-        }
-
-        .planet {
-            position: absolute;
-            top: -5px;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: #3ff9dc;
-        }
-
-        .sun {
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            background-color: #ffab91;
-        }
-
-
-        canvas,
-        main {
-            opacity: 0;
-            display: none;
-            overflow: hidden;
-        }
-
-        .loader {
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            background-color: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+      .loader {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: #4c334d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
     </style>
+  </head>
 
-</head>
-
-
-<body>
+  <body>
     <div id="loader" class="loader">
-        <div class="spinner-box">
-            <div class="solar-system">
-                <div class="earth-orbit orbit">
-                    <div class="planet earth"></div>
-                    <div class="venus-orbit orbit">
-                        <div class="planet venus"></div>
-                        <div class="mercury-orbit orbit">
-                            <div class="planet mercury"></div>
-                            <div class="sun"></div>
-                        </div>
-                    </div>
-                </div>
+      <div class="spinner-box">
+        <div class="solar-system">
+          <div class="earth-orbit orbit">
+            <div class="planet earth"></div>
+            <div class="venus-orbit orbit">
+              <div class="planet venus"></div>
+              <div class="mercury-orbit orbit">
+                <div class="planet mercury"></div>
+                <div class="sun"></div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
 
     <canvas class="d-none" id="bg"></canvas>
 
     <main id="content" class="d-none">
-        <header class="white">
-            <h1 class="name">Hayk Sahakyan</h1>
-            <p class="position">Software developer</p>
-        </header>
+      <header class="light">
+        <h1 id="name" class="name"></h1>
+        <p class="position">Frontend developer</p>
+      </header>
 
+      <section class="right">
+        <h2 class="header">About Me</h2>
+        <p>
+          Software development has been my favorite activity for many years.
+          Initially, it was a hobby, but then I realized that it is what I want
+          to specialize in. So I studied Computer engineering at university.
+          While mostly doing web programming with Javascript and React/Vue, I
+          have also done some game development with Unity/C# and CLI application
+          development with Python/Javascript. I have a great appreciation for
+          beautiful code and elegant solutions.
+        </p>
+      </section>
 
-        <section class="right">
-            <h2 class="header">About Me</h2>
-            <p>
-                Software development has been my favorite activity for many
-                years. Initially, it was a hobby, but then I realized that it is
-                what I want to specialize in. So I studied Computer engineering at university.
-                While mostly doing web programming with Javascript and React, I have also done
-                some game development with Unity/C# and CLI application
-                development with Python/Javascript. I have a great
-                appreciation for beautiful code and elegant solutions.
-            </p>
-        </section>
+      <section class="light">
+        <h2 class="header">Hobbies</h2>
+        <p>
+          After a long working day, I enjoy listening to classical music. When I
+          have free time watching movies or reading non-fiction books are my
+          favorite activities to do. And I always find time for playing chess
+          and solving chess puzzles.
+        </p>
+      </section>
 
-        <section class="white">
-            <h2 class="header">Hobbies</h2>
-            <p>
-                After a long working day, I enjoy listening to classical music. When I have free time
-                watching movies or reading non-fiction books are my favorite activities to do. And I always
-                find time for playing chess and solving chess puzzles.
+      <section class="light">
+        <h2 class="header">Experience</h2>
+        <h3>Learning Coach at TUMO</h3>
+        <p>
+          I was mentoring 12 - 18 years old children to excel in tech and
+          creative fields
+        </p>
+      </section>
 
-            </p>
-        </section>
+      <section class="skills right">
+        <h2 class="header">Skills</h2>
 
-        <section class="right">
-            <h2 class="header">Soft skills</h2>
-            <p>
+        <div class="skills-diagram">
+          <div class="item skill-1">C#</div>
 
+          <div class="item skill-2">HTML5</div>
 
-                One of my biggest strengths is the ability to <span class="important">communicate</span> with people
-                from different backgrounds and age groups. I am also good at <span class="important">problem
-                    solving</span>
-                as I have
-                <span class="important">analytical thinking</span>. Two of my top skills <span
-                    class="important">leadership</span>
-                and <span class="important">persistence</span> come in handy all the time.
-            </p>
-        </section>
+          <div class="item skill-3">Node JS</div>
 
-        <section class="white">
-            <h2 class="header">Experience</h2>
-            <h3>Learning Coach at TUMO</h3>
-            <p>
-            <ul>
-                <li>Support students' learning process</li>
-                <li>Assist them in the design of their personal learning plans </li>
-                <li>Offer guidance towards the completion of learning activities </li>
-                <li>Provide encouragement and motivation toward harnessing the potential of technologies and
-                    self-learning </li>
-                <li>Track student attendance and provide feedback regarding student development, take measures to engage
-                    and provide technical inspiration to reluctant students </li>
-                <li>Convey a positive and professional image to students </li>
-                <li>Promote learning in a collaborative and energized mode</li>
-            </ul>
-            </p>
+          <div class="item skill-4">Javascript</div>
 
-        </section>
+          <div class="item skill-5">Express</div>
 
-        <section class="skills right">
-            <h2 class="header">Skills</h2>
+          <div class="item skill-6">Unity</div>
 
-            <div class="skills-diagram">
-                <div class="item skill-1">C#</div>
+          <br />
+          <div class="item skill-7">Three.js</div>
 
-                <div class="item skill-2">HTML5</div>
+          <div class="item skill-8">Python</div>
 
-                <div class="item skill-3">Node JS</div>
+          <div class="item skill-9">React</div>
+          <div class="item skill-10">CSS</div>
+          <div class="item skill-11">SASS</div>
+          <br />
+        </div>
+      </section>
 
-                <div class="item skill-4">Javascript</div>
-
-                <div class="item skill-5">Express</div>
-
-                <div class="item skill-6">Unity</div>
-
-                <br />
-                <div class="item skill-7">Three.js</div>
-
-                <div class="item skill-8">Python</div>
-
-                <div class="item skill-9">React</div>
-                <div class="item skill-10">
-                    CSS
-                </div>
-                <div class="item skill-11">
-                    SASS
-                </div>
-                <br />
-            </div>
-        </section>
-
-
-        <section class="contact white">
-            <h2 class="header">Contact me</h2>
-            <p> <img class="contact-icon" src="img/phone.png" alt="Phone Icon"> 096 84 68 77</p>
-            <p><img class="contact-icon" src="img/email.png" alt="Email Icon"> hayk.sahakyan.1999@gmail.com</p>
-        </section>
-
-
+      <section class="contact light">
+        <h2 class="header">Contact me</h2>
+        <p>
+          <img class="contact-icon" src="img/phone.png" alt="Phone Icon" /> 096
+          84 68 77
+        </p>
+        <p>
+          <img class="contact-icon" src="img/email.png" alt="Email Icon" />
+          hayk.sahakyan.1999@gmail.com
+        </p>
+      </section>
     </main>
 
     <script type="module" src="/main.js"></script>
-</body>
-
+    <script src="/typing.js"></script>
+  </body>
 </html>
