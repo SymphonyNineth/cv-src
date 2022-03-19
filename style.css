@@ -4,7 +4,7 @@ canvas {
   left: 0;
 }
 :root {
-  --dark-bg: rgba(105, 48, 195, 0.7);
+  --dark-bg: rgba(15, 5, 32, 0.7);
   --light-bg: rgba(26, 117, 159, 0.7);
 
   --spacing: 350px;
@@ -153,7 +153,7 @@ blockquote p {
   margin: 0.25em auto;
 }
 
-.skills-diagram .skill-1 {
+.skills-diagram .csharp {
   vertical-align: bottom;
   width: 4em;
   height: 4em;
@@ -165,7 +165,7 @@ blockquote p {
   left: 1.33em;
   top: 1.5em;
 }
-.skills-diagram .skill-2 {
+.skills-diagram .html5 {
   width: 7em;
   height: 7em;
   line-height: 7em;
@@ -176,7 +176,7 @@ blockquote p {
   border-color: #723c70;
 }
 
-.skills-diagram .skill-3 {
+.skills-diagram .node {
   vertical-align: bottom;
 
   width: 8em;
@@ -188,7 +188,7 @@ blockquote p {
   top: -4em;
   left: 0.66em;
 }
-.skills-diagram .skill-4 {
+.skills-diagram .javascript {
   width: 10em;
   height: 10em;
   line-height: 10em;
@@ -198,7 +198,7 @@ blockquote p {
 
   top: 2.67em;
 }
-.skills-diagram .skill-5 {
+.skills-diagram .express {
   width: 7em;
   height: 7em;
   line-height: 7em;
@@ -208,7 +208,7 @@ blockquote p {
   left: -5em;
   top: -2em;
 }
-.skills-diagram .skill-6 {
+.skills-diagram .unity {
   vertical-align: bottom;
 
   width: 3em;
@@ -221,7 +221,7 @@ blockquote p {
   left: -6.5em;
   top: -3em;
 }
-.skills-diagram .skill-7 {
+.skills-diagram .threejs {
   vertical-align: bottom;
   width: 7em;
   height: 7em;
@@ -233,7 +233,7 @@ blockquote p {
   background-color: #d85a8a;
   border-color: #d85a8a;
 }
-.skills-diagram .skill-8 {
+.skills-diagram .python {
   vertical-align: bottom;
 
   width: 9em;
@@ -244,7 +244,7 @@ blockquote p {
   left: -3em;
   top: 0;
 }
-.skills-diagram .skill-9 {
+.skills-diagram .react {
   width: 10em;
   height: 10em;
   line-height: 10em;
@@ -255,7 +255,7 @@ blockquote p {
   left: -2em;
   top: 1em;
 }
-.skills-diagram .skill-10 {
+.skills-diagram .sass {
   vertical-align: bottom;
   width: 8em;
   height: 8em;
@@ -263,12 +263,12 @@ blockquote p {
   background-color: #892b64;
   border-color: #892b64;
 
-  left: -2em;
-  top: 0px;
+  left: 3em;
+  top: -2rem;
   font-size: 1em;
 }
 
-.skills-diagram .skill-11 {
+.skills-diagram .css {
   vertical-align: bottom;
   width: 8em;
   height: 8em;
@@ -280,7 +280,17 @@ blockquote p {
   top: -5em;
   font-size: 1em;
 }
+.skills-diagram .vue {
+  width: 10em;
+  height: 10em;
+  line-height: 10em;
 
+  background-color: #067ffb;
+  border-color: #067ffb;
+
+  left: 0;
+  top: 1em;
+}
 .important {
   font-weight: 900;
   font-size: 1.3em;
@@ -297,6 +307,46 @@ blockquote p {
   height: 25px;
 }
 
+.property {
+  margin-left: 3rem;
+}
+
+.string {
+  color: #d15827;
+}
+
+.key {
+  color: #24a9f1;
+  font-weight: 600;
+}
+
+.const {
+  color: #186fb7;
+}
+
+.comments {
+  color: #0b5a0b;
+}
+
+.variable {
+  color: #00a6ff;
+  font-weight: 900;
+}
+
+.codeMark {
+  color: tomato;
+}
+
+.experience-item {
+  font-size: 1.5rem;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.experience-item:not(:first-child) {
+  margin-top: 1rem;
+}
 @media screen and (max-width: 1350px) {
   header,
   .right,

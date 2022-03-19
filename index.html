@@ -148,14 +148,24 @@
     <canvas class="d-none" id="bg"></canvas>
 
     <main id="content" class="d-none">
-      <header class="light">
-        <h1 id="name" class="name"></h1>
-        <p class="position">Frontend developer</p>
+      <header class="dark">
+        <span class="const">const</span> <span class="variable">me</span> =
+        <span>{</span>
+        <div class="property">
+          <span class="key">name</span>:
+          <span class="string">"Hayk Sahakyan"</span>
+        </div>
+        <div class="property">
+          <span class="key">field</span>:
+          <span class="string">"Frontend developer"</span>
+        </div>
+        <span>}</span>
       </header>
 
       <section class="right">
-        <h2 class="header">About Me</h2>
+        <h2 class="header comments">// About Me</h2>
         <p>
+          <span class="codeMark">&lt;&#47;&#62;</span>
           Software development has been my favorite activity for many years.
           Initially, it was a hobby, but then I realized that it is what I want
           to specialize in. So I studied Computer engineering at university.
@@ -163,64 +173,84 @@
           have also done some game development with Unity/C# and CLI application
           development with Python/Javascript. I have a great appreciation for
           beautiful code and elegant solutions.
+          <span class="codeMark">&lt;&#47;&#62;</span>
         </p>
       </section>
 
-      <section class="light">
-        <h2 class="header">Hobbies</h2>
-        <p>
-          After a long working day, I enjoy listening to classical music. When I
-          have free time watching movies or reading non-fiction books are my
-          favorite activities to do. And I always find time for playing chess
-          and solving chess puzzles.
-        </p>
-      </section>
-
-      <section class="light">
-        <h2 class="header">Experience</h2>
-        <h3>Learning Coach at TUMO</h3>
-        <p>
-          I was mentoring 12 - 18 years old children to excel in tech and
-          creative fields
-        </p>
+      <section class="dark">
+        <h2 class="header comments">// Experience</h2>
+        <div class="experience-item">
+          <span class="const">const</span>
+          <span class="variable">WillingAndAble</span> =
+          <span>{</span>
+          <div class="property">
+            <span class="key">jobTitle</span>:
+            <span class="string">"Frontend Developer"</span>
+          </div>
+          <div class="property">
+            <span class="key">duty</span>:
+            <span class="string"
+              >"Develop robust single page applications with outstanding UX and
+              dazzling UI using modern Javascript Frameworks"</span
+            >
+          </div>
+          <span>}</span>
+        </div>
+        <div class="experience-item">
+          <span class="const">const</span> <span class="variable">TUMO</span> =
+          <span>{</span>
+          <div class="property">
+            <span class="key">jobTitle</span>:
+            <span class="string">"Learning Coach"</span>
+          </div>
+          <div class="property">
+            <span class="key">duty</span>:
+            <span class="string"
+              >"Mentoring 12 - 18 years old children to excel in various tech
+              and creative fields"</span
+            >
+          </div>
+          <span>}</span>
+        </div>
       </section>
 
       <section class="skills right">
-        <h2 class="header">Skills</h2>
+        <h2 class="header comments">// Skills</h2>
 
         <div class="skills-diagram">
-          <div class="item skill-1">C#</div>
+          <div class="item csharp">C#</div>
 
-          <div class="item skill-2">HTML5</div>
+          <div class="item html5">HTML5</div>
 
-          <div class="item skill-3">Node JS</div>
+          <div class="item node">Node JS</div>
 
-          <div class="item skill-4">Javascript</div>
+          <div class="item javascript">Javascript</div>
 
-          <div class="item skill-5">Express</div>
+          <div class="item express">Express</div>
 
-          <div class="item skill-6">Unity</div>
+          <div class="item unity">Unity</div>
 
           <br />
-          <div class="item skill-7">Three.js</div>
+          <div class="item threejs">Three.js</div>
 
-          <div class="item skill-8">Python</div>
+          <div class="item python">Python</div>
 
-          <div class="item skill-9">React</div>
-          <div class="item skill-10">CSS</div>
-          <div class="item skill-11">SASS</div>
+          <div class="item react">React</div>
+          <div class="item vue">Vue</div>
+          <div class="item css">CSS</div>
+          <div class="item sass">SASS</div>
           <br />
         </div>
       </section>
 
-      <section class="contact light">
-        <h2 class="header">Contact me</h2>
+      <section class="contact dark">
+        <h2 class="header comments">// Contact me</h2>
         <p>
-          <img class="contact-icon" src="img/phone.png" alt="Phone Icon" /> 096
+          <img class="contact-icon" src="img/linkedin.png" alt="linkedin" /> 096
           84 68 77
         </p>
         <p>
-          <img class="contact-icon" src="img/email.png" alt="Email Icon" />
+          <img class="contact-icon" src="img/email.png" alt="Email" />
           hayk.sahakyan.1999@gmail.com
         </p>
       </section>

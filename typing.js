@@ -1,10 +1,22 @@
-function type(selector, text, delay, acceleration = 1, i = 0) {
-  const element = document.querySelector(selector);
+function type(
+  el,
+  text,
+  delay,
+  deceleration = 1,
+  maxDelay = Number.MAX_SAFE_INTEGER,
+  minDelay = Number.MIN_SAFE_INTEGER,
+  i = 0
+) {
+  if (maxDelay < minDelay)
+    throw Error("Max delay can not be lower than min delay");
+  delay *= deceleration;
+  if (delay > maxDelay) delay = maxDelay;
+  if (delay < minDelay) delay = minDelay;
   if (i < text.length) {
-    element.innerHTML += text[i];
-    i++;
-    setTimeout(type, delay, selector, text, delay, acceleration, i);
+    setTimeout(() => {
+      el.textContent += text[i];
+      i++;
+      type(el, text, delay, deceleration, maxDelay, minDelay, i);
+    }, delay);
   }
 }
-
-type("#name", "Hayk Sahakyan", 300, 1.5);
